@@ -6,6 +6,6 @@ import (
 )
 
 type Handler interface {
-	Subscribe(cancCtx context.Context, subID string, refreshRate time.Duration, msgProc func(c context.Context, msgData []byte))
+	Subscribe(cancCtx context.Context, subID string, refreshRate time.Duration, msgProc func(c context.Context, msgData []byte)) error
 	Push(ctx context.Context, topicID, msg string) error
 }
